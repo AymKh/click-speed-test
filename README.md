@@ -3,11 +3,6 @@
 Simple Click Speed Tester made with vanilla JS  
 Free & open Source, anyone is welcomed to improve styling, functoinality ....
 
-
-## Demo
-[![Deployed demo on heroku](https://cst-aymkh.netlify.app/)]()
-
-
 ## License
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
