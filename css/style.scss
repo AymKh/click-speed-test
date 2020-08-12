@@ -1,0 +1,45 @@
+@import './reset';
+
+.master-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+.clickable-pad{
+    width: 50%;
+    background-color: gray;
+}
+#overlay{
+    background-color: #e6e6e6;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    text-transform: capitalize;
+}
+
+.dashboard{
+    width: 50%;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.timer{
+    display: block;
+    font-size: 4em;
+}
+
+
+.stats{
+    label{
+        font-size: 2em;
+    }
+    .avrg{
+        display: block;
+        font-size: 1.4em;
+    }
+}
