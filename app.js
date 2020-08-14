@@ -1,10 +1,12 @@
 const pad               = document.querySelector('.clickable-pad')
 const overlay           = document.querySelector('#overlay')
-const clickCountBoard   = document.querySelector('.clicks')
 const timer             = document.querySelector('.timer')
 const timerS            = document.querySelector('.seconds')
 const timerMS           = document.querySelector('.milseconds')
 const averagePanel      = document.querySelector('.avrg')
+const overlayDark       = document.querySelector('.overlay-dark')
+const modal             = document.querySelector('.stats')
+const modalExit         = document.querySelector('.modal-exit')
 
 let count               = 0
 let average             = 0
@@ -18,7 +20,6 @@ const cpm = ()=>{
     // get number of clicks
     pad.onclick = ()=>{
         count ++
-        clickCountBoard.innerHTML = count
     }
 }
 
@@ -26,15 +27,15 @@ const end = (x, y)=>{
     if (x === 5) {
         clearInterval(y)
         average = count / 5
+
+        overlayDark.style.display = 'block'
+        modal.style.display = 'block'
         averagePanel.innerHTML = `You made ${count} Clicks in 5 Seconds, with the speed of ${average} CPS`
+        
         timer.style.display = 'none'
         overlay.style.display = 'flex'
         overlay.style.alignItems = 'center'
         overlay.style.justifyContent = 'center'
-        count               = 0
-        average             = 0
-        seconds             = 0
-        milSeconds          = 0
     }
 }
 
@@ -43,6 +44,8 @@ overlay.addEventListener('click', ()=>{
     overlay.style.display = 'none'
     pad.style.display = 'block'
     timer.style.display = 'block'
+    overlayDark.style.display = 'none'
+    modal.style.display = 'none'
     averagePanel.innerHTML = ''
     // counting clicks
     cpm()
@@ -61,4 +64,12 @@ overlay.addEventListener('click', ()=>{
         
         end(seconds, int)
     }, 100);
+})
+modalExit.addEventListener('click', ()=>{
+    overlayDark.style.display = 'none'
+    modal.style.display = 'none'
+    count               = 0
+    average             = 0
+    seconds             = 0
+    milSeconds          = 0
 })
