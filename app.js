@@ -16,7 +16,7 @@ let milSeconds          = 0
 timerS.innerHTML = seconds
 timerMS.innerHTML = milSeconds
 
-const cpm = ()=>{   
+const cps = ()=>{   
     // get number of clicks
     pad.onclick = ()=>{
         count ++
@@ -48,7 +48,7 @@ overlay.addEventListener('click', ()=>{
     modal.style.display = 'none'
     averagePanel.innerHTML = ''
     // counting clicks
-    cpm()
+    cps()
 
     // getting all the clicks within 5sec
     let int = setInterval(() => {
